@@ -1,0 +1,19 @@
+{
+  "name": "pedidosYA",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "LeandroCasarin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "https": "^1.0.0",
+    "node-fetch": "^2.5.0",
+    "nodemon": "^1.19.1",
+    "request": "^2.88.0"
+  }
+}
