@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+//import './App.css';
+import { Provider as ReduxProvider } from "react-redux";
+import configureStore from "./modules/store";
+import Restaurants from './containers/Restaurants'
+
+const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
 class App extends Component {
 state = {
@@ -27,17 +32,19 @@ state = {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        // Render the newly fetched data inside of this.state.data 
-        {/* <p className="App-intro">{this.state.data}</p> */}
-        {JSON.stringify(this.state.data,4,null)}
-      </div>
+      <ReduxProvider store={reduxStore}>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">ToDo Redux app</h1>
+          </header>
+          <Restaurants />
+        </div>
+      </ReduxProvider>
     );
   }
 }
 
 export default App;
+
+
+
