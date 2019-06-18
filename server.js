@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 var request = require('request');
-const fetch = require('node-fetch');
-const https = require('https');
+
 const resNow = require('./response')
 //console.log(resNow.data)
 
