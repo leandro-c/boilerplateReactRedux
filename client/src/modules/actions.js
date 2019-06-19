@@ -18,10 +18,12 @@ const deleteItem = id => ({
 
 
 const getRestaurants = (start) => {
+    console.log('111')
     return function (dispatch) {
         dispatch({ type: Types.GET_RESTAURANTS, payload: [] })
         axios.get("http://localhost:5000/api/shops"
         ).then((response) => {
+            console.log('actions',response)
             dispatch({ type: Types.GET_RESTAURANTS, payload: response })
         }).catch((err) => {
             dispatch({ type: Types.GET_RESTAURANTS, payload: err })
