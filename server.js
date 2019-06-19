@@ -10,12 +10,13 @@ const resNow = require('./response')
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.get('/api/shops', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     if (req.query.query) {
       let name = req.query.query
    
       var data = resNow.data
       var objSearch = data.filter(element=> {
-        return String(element.name).toLowerCase() === name.toLowerCase()
+        return String(element.name).toLowerCase().includes(name.toLowerCase());
       })
    
       res.send({ data: objSearch })
