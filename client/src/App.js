@@ -34,9 +34,7 @@ state = {
     return (
       <ReduxProvider store={reduxStore}>
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">ToDo Redux app</h1>
-          </header>
+          <header className="App-header"/>
           <Restaurants />
         </div>
       </ReduxProvider>
